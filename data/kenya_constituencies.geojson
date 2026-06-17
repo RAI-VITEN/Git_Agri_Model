@@ -1,0 +1,130 @@
+"""
+Kenya constituencies GeoJSON data
+Contains boundaries for visualization
+"""
+
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {"name": "Nyeri Central", "id": 1},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [36.95, -0.42]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {"name": "Kiambaa", "id": 2},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [36.82, -0.36]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {"name": "Mukurweini", "id": 3},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [36.93, -0.64]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {"name": "Nairobi Central", "id": 4},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [36.81, -1.29]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {"name": "Kasarani", "id": 5},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [36.90, -1.21]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {"name": "Makadara", "id": 6},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [36.87, -1.32]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {"name": "Kajiado Central", "id": 7},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [36.77, -2.00]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {"name": "Kajiado East", "id": 8},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [36.98, -2.10]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {"name": "Nakuru Town East", "id": 9},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [36.06, -0.35]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {"name": "Nakuru Town West", "id": 10},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [36.04, -0.37]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {"name": "Kericho", "id": 11},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [35.28, -0.36]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {"name": "Kisii Central", "id": 12},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [34.78, -0.68]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {"name": "Homabay", "id": 13},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [34.46, -0.53]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {"name": "Kisumu Central", "id": 14},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [34.76, -0.10]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {"name": "Eldoret East", "id": 15},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [35.27, 0.52]
+      }
+    }
+  ]
+}
