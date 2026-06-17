@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agricultural Dashboard - Kenya Crop Advisor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>🌾 Agricultural Dashboard</h1>
+                <p>Kenya Crop Suitability & Planting Advisor</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Step 1: File Upload -->
+            <section class="step" id="step-upload">
+                <div class="step-header">
+                    <h2>📁 Step 1: Upload Meteorological Data</h2>
+                    <p>Upload a netCDF4 (.nc) file containing rainfall and temperature data</p>
+                </div>
+                
+                <div class="upload-container">
+                    <div class="file-input-wrapper">
+                        <input type="file" id="ncFile" accept=".nc" />
+                        <label for="ncFile" class="file-label">
+                            <span class="upload-icon">📤</span>
+                            <span>Click to select or drag and drop .nc file</span>
+                        </label>
+                    </div>
+                    <div id="uploadStatus" class="status-message"></div>
+                </div>
+            </section>
+
+            <!-- Step 2: Location Selection -->
+            <section class="step" id="step-location">
+                <div class="step-header">
+                    <h2>📍 Step 2: Select Area & Parse Data</h2>
+                    <p>Choose a constituency to analyze</p>
+                </div>
+
+                <div class="location-container">
+                    <div id="map" class="map"></div>
+                    
+                    <div class="constituency-select">
+                        <label for="constituencies">Select Constituency:</label>
+                        <select id="constituencies">
+                            <option value="">-- Choose a constituency --</option>
+                        </select>
+                        <button id="parseBtn" class="btn btn-primary" disabled>Parse Data</button>
+                    </div>
+
+                    <div id="parseStatus" class="status-message"></div>
+                </div>
+            </section>
+
+            <!-- Step 3: Data Visualization -->
+            <section class="step" id="step-visualization">
+                <div class="step-header">
+                    <h2>📊 Step 3: Data Visualization</h2>
+                    <p>Meteorological data overview</p>
+                </div>
+
+                <div class="visualization-container">
+                    <div class="data-cards">
+                        <div class="data-card">
+                            <div class="card-icon">🌧️</div>
+                            <div class="card-content">
+                                <h3>Rainfall</h3>
+                                <p class="card-value" id="rainfallValue">--</p>
+                                <p class="card-unit">mm</p>
+                            </div>
+                        </div>
+                        <div class="data-card">
+                            <div class="card-icon">🌡️</div>
+                            <div class="card-content">
+                                <h3>Temperature</h3>
+                                <p class="card-value" id="temperatureValue">--</p>
+                                <p class="card-unit">°C</p>
+                            </div>
+                        </div>
+                        <div class="data-card">
+                            <div class="card-icon">💧</div>
+                            <div class="card-content">
+                                <h3>Soil Moisture</h3>
+                                <p class="card-value" id="soilMoistureValue">--</p>
+                                <p class="card-unit">%</p>
+                            </div>
+                        </div>
+                        <div class="data-card">
+                            <div class="card-icon">💨</div>
+                            <div class="card-content">
+                                <h3>Humidity</h3>
+                                <p class="card-value" id="humidityValue">--</p>
+                                <p class="card-unit">%</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="chartsContainer" style="display: none;">
+                        <div id="weatherChart" class="chart"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Step 4: Predictions -->
+            <section class="step" id="step-prediction">
+                <div class="step-header">
+                    <h2>🤖 Step 4: AI Predictions</h2>
+                    <p>Crop suitability analysis based on current conditions</p>
+                </div>
+
+                <div id="predictStatus" class="status-message"></div>
+                
+                <div class="predictions-container">
+                    <div id="predictionsContent"></div>
+                </div>
+            </section>
+
+            <!-- Step 5: Recommendations -->
+            <section class="step" id="step-recommendations">
+                <div class="step-header">
+                    <h2>✅ Step 5: Planting Recommendations</h2>
+                    <p>Advisory based on predictions and current conditions</p>
+                </div>
+
+                <div id="recommendationsContent" class="recommendations-container"></div>
+
+                <div id="advisorySummary" class="advisory-box" style="display: none;">
+                    <h3>📋 Advisory Summary</h3>
+                    <pre id="advisoryText"></pre>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>🌍 Agricultural Dashboard | Kenya Meteorological Authority Integration</p>
+            <p>Data Source: netCDF4 Meteorological Files | Model: TensorFlow Neural Network</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>
