@@ -1,8 +1,3 @@
-"""
-Kenya constituencies GeoJSON data
-Contains boundaries for visualization
-"""
-
 {
   "type": "FeatureCollection",
   "features": [
